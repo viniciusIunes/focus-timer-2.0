@@ -1,0 +1,254 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 240;
+  --primary-color: hsla(var(--hue), 6%, 21%, 1);
+  --bg-color: hsl(calc(var(--hue) - 240), 0%, 100%);
+  --bg-color-dark: hsla(var(--hue), 5%, 7%, 1);
+  --bg-color-light: hsl(var(--hue), 9%, 89%, 1);
+  --svg-secondary: hsl(var(--hue), 6%, 21%);
+  --svg-third: hsla(calc(var(--hue) - 46), 97%, 31%, 1);
+  --svg-bedroom: hsl(calc(var(--hue) - 240), 0%, 100%);
+  --svg-dark-mode: hsla(var(--hue), 7%, 78%, 1);
+  --svg-dark-mode-cards: hsla(var(--hue), 6%, 17%, 1);
+  --svg-dark-mode-icon-card: hsla(var(--hue), 7%, 78%, 1);
+  --svg-dark-mode-cards-open: hsla(calc(var(--hue) - 45), 74%, 15%, 1);
+
+  --ball: input::-webkit-slider-thumb;
+
+
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 10rem;
+  max-width: 30rem;
+
+  background-color: var(--bg-color);
+}
+
+main {
+  display: grid;
+  justify-content: center;
+}
+
+.timer {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.mode {
+  top: 0;
+  right: 6rem;
+  min-height: 6rem;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.mode svg {
+  z-index: 1;
+  position: absolute;
+  margin-top: 5rem;
+}
+
+.mode-light span {
+  color: var(--primary-color);
+}
+
+ .mode-light .card-florest-01 input::-webkit-slider-thumb {
+  background-color: var(--bg-color);
+}
+
+.mode-dark span {
+  color: var(--bg-color);
+}
+
+.range input{
+  background-color: var(--bg-color);
+}
+
+.range input::-webkit-slider-thumb {
+  background-color: var(--bg-color);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button, .mode {
+  transition: all 200ms;
+}
+
+button:hover,
+.mode:hover {
+  filter: brightness(0.9);
+  transform: scale(1.1);
+}
+
+.wrapper-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  margin-bottom: 3.2rem;
+  margin-top: 6rem;
+}
+
+.controls {
+  display: flex;
+  gap: 4rem;
+  z-index: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.cards rect, circle {
+  cursor: auto;
+  display: none;
+}
+
+.range {
+  height: 0;
+  margin-top: 44.8rem;
+  margin-left: 2rem; 
+}
+
+.controls-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  position: absolute;
+} 
+
+.controls-range :nth-child(1){
+  margin-top: 24.45rem;
+  z-index: 1;
+}
+
+.controls-range :nth-child(2){
+  margin-top: 24.45rem;
+  margin-left: 5rem;
+  z-index: 1;
+}
+
+.controls-range :nth-child(3){
+  margin-top: 18.4rem;
+  margin-left: 2rem;
+  z-index: 1;
+}
+
+.controls-range :nth-child(4){
+  margin-top: 18.4rem;
+  margin-left: 5rem;
+  z-index: 1;
+}
+
+.card-01,
+.card-florest-01,
+.card-02,
+.card-rain-02 {
+  height: 15.2rem;
+}
+
+svg {
+  transition: 200ms;
+}
+
+svg:hover {
+  filter: brightness(0.6);
+}
+
+input {
+  max-width: 9rem;
+  max-height: 4px;
+  z-index: 1;
+
+  -webkit-appearance: none;
+  outline: none;
+  background-color: var(--svg-secondary);
+  border-radius: 5px;
+}
+
+ input::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--svg-secondary);
+  border-radius: 8px;
+}
+
+/* ========== Media queries =========== */
+
+@media (min-width: 900px) {
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12.6rem;
+    min-width: 82.1rem;
+
+    background-color: var(--bg-color);
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    margin-top: 19rem;
+    gap: 19rem;
+  }
+
+  .mode {
+    position: absolute;
+    top: 0;
+    right: 10rem;
+    min-height: 6rem;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .wrapper-controls {
+    margin-top: 0;
+  }
+
+  .controls-range :nth-child(1){
+    margin-top: 15.4rem;
+    margin-left: 26.8rem;
+    z-index: 1;
+  }
+  .controls-range :nth-child(2){
+    margin-top: 15.4rem;
+    margin-left: -19rem;
+    z-index: 1;
+  }
+
+  .controls-range :nth-child(3){
+    margin-top: 18.4rem;
+    margin-left: 26.7rem;
+    z-index: 1;
+  }
+
+  .controls-range :nth-child(4){
+    margin-top: 18.4rem;
+    margin-left: -19rem;
+    z-index: 1;
+  }  
+}
